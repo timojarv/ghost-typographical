@@ -8,12 +8,7 @@
 	{{#post}}
 	<head>
 		<title>{{title}} | {{@blog.title}}</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-		<link rel="stylesheet" href="{{asset "css/main.css"}}" />
-		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
+		{{> head}}
 	</head>
 	<body class="no-sidebar">
 		<div id="page-wrapper">
@@ -30,17 +25,17 @@
 							<!-- Content -->
 								<div class="content">
 									<section>
-										<a href="#" class="image featured clear" ><img src="{{image}}" alt="" /></a>
-										<header>
-											<h3>Dolore Amet Consequat</h3>
-										</header>
-										<p>Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum massa. Morbi eu faucibus massa. Aliquam massa urna, imperdiet sit amet mi non, bibendum euismod est. Curabitur mi justo, tincidunt vel eros ullamcorper, porta cursus justo. Cras vel neque eros. Vestibulum diam.</p>
-										<p>Vestibulum diam quam, mollis at consectetur non, malesuada quis augue. Morbi tincidunt pretium interdum. Morbi mattis elementum orci, nec dictum porta cursus justo. Quisque ultricies lorem in ligula condimentum, et egestas turpis sagittis. Cras ac nunc urna. Nullam eget lobortis purus. Phasellus vitae tortor non est placerat tristique. Sed id sem et massa ornare pellentesque. Maecenas pharetra porta accumsan. </p>
-										<p>In vestibulum massa quis arcu lobortis tempus. Nam pretium arcu in odio vulputate luctus. Suspendisse euismod lorem eget lacinia fringilla. Sed sed felis justo. Nunc sodales elit in laoreet aliquam. Nam gravida, nisl sit amet iaculis porttitor, risus nisi rutrum metus, non hendrerit ipsum arcu tristique est.</p>
+										<img class="image featured clear" src="{{image}}" alt="">
+										{{content}}
 									</section>
 								</div>
 
 						</section>
+						<footer class="major">
+						  <ul class="buttons">
+						    <li><a href="{{@blog.url}}" class="button">Home</a></li>
+						  </ul>
+</footer>
 				</article>
 				{{/post}}
 				{{> footer}}
